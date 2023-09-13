@@ -1,0 +1,18 @@
+function aggregEl(elements) {
+
+    implement(elements, 0, (a, b) => a + b);
+    implement(elements, 0, (a, b) => a + 1 / b);
+    implement(elements, "", (a, b) => a + b)
+
+    function implement(arr, initVal, func) {
+        let val = initVal
+        for (let i = 0; i < arr.length; i++) {
+            val = func(val, arr[i]) // (a,b) => a + b ; (val,arr[i]) => val + arr[i]
+        }
+
+        console.log(val)
+
+    }
+
+}
+aggregEl([1, 2, 3])
